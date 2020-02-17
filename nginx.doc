@@ -25,10 +25,37 @@ for start:
 
   netstat -ntlp ==> that shows which ports on your server are running :P
 
-
   =======================================================================================================================================================================================================================
   note: Press Ctrl + P + Q ==> this shortcut helps you to exite from your server
   =======================================================================================================================================================================================================================
 
   ==> with exiting from your terminal server and run [docker ps] you can see your 80 port and nginx that is running
   
+  sudo nano /etc/hosts ==> on this file you can change dns name
+
+  =======================================================================================================================================================================================================================
+  note: (
+    after change on your server you can commit your changes and create a tag for it by following command line:
+
+    docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+    
+    **************************************************************************************************************************************
+    example:
+    **************************************************************************************************************************************
+    $ docker ps
+
+    CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS              NAMES
+    c3f279d17e0a        ubuntu:12.04        /bin/bash           7 days ago          Up 25 hours                            desperate_dubinsky
+    197387f1b436        ubuntu:12.04        /bin/bash           7 days ago          Up 25 hours                            focused_hamilton
+
+    $ docker commit c3f279d17e0a  svendowideit/testimage:version3
+
+    f5283438590d
+
+    $ docker images
+
+    REPOSITORY                        TAG                 ID                  CREATED             SIZE
+    svendowideit/testimage            version3            f5283438590d        16 seconds ago      335.7 MB
+    **************************************************************************************************************************************
+  )
+  =======================================================================================================================================================================================================================
